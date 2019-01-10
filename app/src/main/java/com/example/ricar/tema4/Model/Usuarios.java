@@ -1,71 +1,69 @@
 package com.example.ricar.tema4.Model;
 
 public class Usuarios {
-    private String email;
-   private String nombreUsuario;
-   private String nombre;
-   private String apellidos;
-   private String dirreccion;
+    private String Email;
+   private String NombreUsuario;
+   private String Nombre;
+   private String Apellidos;
+   private String Direccion;
 
 
-    public Usuarios(String email, String nombreUsuario, String nombre, String apellidos, String dirreccion) {
-        this.email = email;
-        this.nombreUsuario = nombreUsuario;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.dirreccion = dirreccion;
+    public Usuarios(String Email, String NombreUsuario, String Nombre, String Apellidos, String Direccion) {
+        this.Email = Email;
+        this.NombreUsuario = NombreUsuario;
+        this.Nombre =  Nombre;
+        this.Apellidos = Apellidos;
+        this.Direccion = Direccion;
     }
 
     @Override
     public String toString() {
         return "Usuarios{" +
-                "email='" + email + '\'' +
-                ", nombreUsuario='" + nombreUsuario + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
-                ", dirreccion='" + dirreccion + '\'' +
+                "Email='" + Email + '\'' +
+                ", NombreUsuario='" + NombreUsuario + '\'' +
+                ", Nombre='" + Nombre + '\'' +
+                ", Apellidos='" + Apellidos + '\'' +
+                ", Direccion='" + Direccion + '\'' +
                 '}';
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
     public String getNombreUsuario() {
-        return nombreUsuario;
+        return NombreUsuario;
     }
 
     public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+        NombreUsuario = nombreUsuario;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        Nombre = nombre;
     }
 
     public String getApellidos() {
-        return apellidos;
+        return Apellidos;
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+        Apellidos = apellidos;
     }
 
-    public String getDirreccion() {
-        return dirreccion;
+    public String getDireccion() {
+        return Direccion;
     }
 
-    public void setDirreccion(String dirreccion) {
-        this.dirreccion = dirreccion;
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
     }
-
-
 }

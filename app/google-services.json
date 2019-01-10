@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "380992896207-9lkb73gegdsh7h25qd93hu0he0bpsbef.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ricar.tema4",
+            "certificate_hash": "d37adfa2c3718efb25be6eb34cca2e3b4b167d70"
+          }
+        },
+        {
           "client_id": "380992896207-vgb2arv9ikvc6kfs6fbqsvmvtuc55p65.apps.googleusercontent.com",
           "client_type": 3
         }

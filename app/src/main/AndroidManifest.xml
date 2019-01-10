@@ -19,7 +19,8 @@
         <activity android:name=".ActivityRegistrar" />
         <activity android:name=".DatosUsuario" />
         <activity android:name=".PantallaInicial" />
-        <activity android:name=".ModificarDatos"></activity>
+        <activity android:name=".ModificarDatos" />
+        <activity android:name=".AgregarProducto"></activity>
     </application>
 
 </manifest>

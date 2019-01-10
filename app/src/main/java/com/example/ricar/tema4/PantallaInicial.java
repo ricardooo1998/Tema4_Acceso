@@ -9,6 +9,8 @@ import android.widget.Button;
 public class PantallaInicial extends AppCompatActivity implements View.OnClickListener {
     Button agregarUsuario;
     Button modificarDatos;
+    Button agreagarProducto;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +19,11 @@ public class PantallaInicial extends AppCompatActivity implements View.OnClickLi
 
         agregarUsuario = findViewById(R.id.agregarUsuarios);
         modificarDatos = findViewById(R.id.modificarDatos);
-
+        agreagarProducto = findViewById(R.id.añadirProducto);
 
         agregarUsuario.setOnClickListener(this);
         modificarDatos.setOnClickListener(this);
+        agreagarProducto.setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +37,10 @@ public class PantallaInicial extends AppCompatActivity implements View.OnClickLi
             case R.id.modificarDatos:
                 Intent i2 = new Intent(getApplicationContext(), ModificarDatos.class);
                 startActivity(i2);
+                break;
+            case R.id.añadirProducto:
+                Intent i3 = new Intent(getApplicationContext(), AgregarProducto.class);
+                startActivity(i3);
                 break;
         }
     }
