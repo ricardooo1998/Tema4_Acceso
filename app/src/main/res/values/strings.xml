@@ -9,9 +9,11 @@
     <string name="cancelar">Cancelar</string>
     <string name="datos_del_usuario">Datos del Usuario</string>
     <string name="correo_electr_nico">Correo Electrónico</string>
-    <string name="nombre">Nombre:</string>
-    <string name="nombre_de_usuario">Nombre de Usuario:</string>
-    <string name="apellidos">Apellidos:</string>
-    <string name="dirrecci_n">Dirrección:</string>
+    <string name="nombre">Nombre</string>
+    <string name="nombre_de_usuario">Nombre de Usuario</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="dirrecci_n">Dirección</string>
     <string name="enviar">Enviar</string>
+    <string name="modificar_datos">Modificar Datos</string>
+    <string name="nodo_usuarios">usuarios</string>
 </resources>

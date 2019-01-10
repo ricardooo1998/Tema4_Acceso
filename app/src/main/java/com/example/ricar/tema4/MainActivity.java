@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(MainActivity.this, "Accediendo."+user.getUid(), Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(getApplicationContext(), DatosUsuario.class);
+                            Intent i = new Intent(getApplicationContext(), PantallaInicial.class);
                             startActivity(i);
                         } else {
                             Toast.makeText(MainActivity.this, "Fallo en la Autentificación.", Toast.LENGTH_LONG).show();

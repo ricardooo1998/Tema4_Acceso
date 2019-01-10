@@ -1,5 +1,6 @@
 package com.example.ricar.tema4;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,10 +14,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class DatosUsuario extends AppCompatActivity {
-    EditText txtNombreUsuario;
-    EditText txtNombre;
-    EditText txtApellidos;
-    EditText txtDirreccion;
+    EditText email;
+    EditText NombreUsuario;
+    EditText Nombre;
+    EditText Apellidos;
+    EditText Direccion;
     Button enviar;
 
     DatabaseReference baseDatos;
@@ -25,44 +27,51 @@ public class DatosUsuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
-        baseDatos = FirebaseDatabase.getInstance().getReference("usuario");
+        baseDatos = FirebaseDatabase.getInstance().getReference("usuarios");
 
-
-        txtNombreUsuario = findViewById(R.id.nombreUsuario);
-        txtNombre = findViewById(R.id.nombreReal);
-        txtApellidos = findViewById(R.id.apellidos);
-        txtDirreccion = findViewById(R.id.dirrecion);
+        email = findViewById(R.id.Email);
+        NombreUsuario = findViewById(R.id.NombreUsuario);
+        Nombre = findViewById(R.id.NombreReal);
+        Apellidos = findViewById(R.id.Apellidos);
+        Direccion = findViewById(R.id.Direcion);
         enviar = findViewById(R.id.enviarDatos);
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombreUsuario = txtNombreUsuario.getText().toString();
-                String nombre = txtNombre.getText().toString();
-                String apellidos = txtApellidos.getText().toString();
-                String dirreccion = txtDirreccion.getText().toString();
+                String txtEmail = email.getText().toString();
+                String txtNombreUsuario = NombreUsuario.getText().toString();
+                String txtNombre = Nombre.getText().toString();
+                String txtApellidos = Apellidos.getText().toString();
+                String txtDirreccion = Direccion.getText().toString();
 
-                if (TextUtils.isEmpty(nombreUsuario))
+                if (TextUtils.isEmpty(txtEmail))
                 {
-                    Toast.makeText(getApplicationContext(), "Error, Debes introducir el Nombre de Usuario", Toast.LENGTH_LONG).show();
-                        if (TextUtils.isEmpty(nombre))
+                    Toast.makeText(getApplicationContext(), "Error, Debes introducir algun email", Toast.LENGTH_LONG).show();
+                        if (TextUtils.isEmpty(txtNombreUsuario))
                         {
-                            Toast.makeText(getApplicationContext(), "Error, Debes introducir el Nombre", Toast.LENGTH_LONG).show();
-                            if (TextUtils.isEmpty(apellidos))
+                            Toast.makeText(getApplicationContext(), "Error, Debes introducir el nombre de usuario", Toast.LENGTH_LONG).show();
+                            if (TextUtils.isEmpty(txtNombre))
                             {
-                                Toast.makeText(getApplicationContext(), "Error, Debes introducir los Apellidos", Toast.LENGTH_LONG).show();
-                                if (TextUtils.isEmpty(dirreccion))
+                                Toast.makeText(getApplicationContext(), "Error, Debes introducir el nombre", Toast.LENGTH_LONG).show();
+                                if (TextUtils.isEmpty(txtApellidos))
                                 {
-                                    Toast.makeText(getApplicationContext(), "Error, Debes introducir la Dirrección", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Error, Debes introducir los apellidos", Toast.LENGTH_LONG).show();
+                                    if (TextUtils.isEmpty(txtDirreccion));
+                                    {
+                                        Toast.makeText(getApplicationContext(), "Error, Debes introducir la direccion", Toast.LENGTH_LONG).show();
+                                    }
                                 }
                             }
                         }
                     }
                     else
                     {
-                        Usuarios u = new Usuarios(nombreUsuario, nombre, apellidos, dirreccion);
+                        Usuarios u = new Usuarios(txtEmail, txtNombreUsuario, txtNombre, txtApellidos, txtDirreccion);
                         String clave = baseDatos.push().getKey();
                         baseDatos.child(clave).setValue(u);
-                        Toast.makeText(getApplicationContext(), "Se añadio un Nuevo usuario: [ "+nombreUsuario+" ]", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Se añadio un Nuevo usuario: [ "+NombreUsuario+" ]", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), PantallaInicial.class);
+                        startActivity(i);
                     }
 
 

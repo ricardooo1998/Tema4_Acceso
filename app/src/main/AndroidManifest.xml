@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityRegistrar" />
-        <activity android:name=".DatosUsuario"></activity>
+        <activity android:name=".DatosUsuario" />
+        <activity android:name=".PantallaInicial" />
+        <activity android:name=".ModificarDatos"></activity>
     </application>
 
 </manifest>
